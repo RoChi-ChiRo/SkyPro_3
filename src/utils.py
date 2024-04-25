@@ -3,7 +3,8 @@ import json
 
 def read_operations(path):
     with open(path) as file:
-        return json.dump(file)
+        data = file.read()
+        return json.dumps(data)
 
 
 def format_operation(operation):
