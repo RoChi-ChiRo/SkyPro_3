@@ -1,9 +1,13 @@
+import os.path
 import unittest
+import src.utils
+from config import ROOT_DIR
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+class FuncsTest(unittest.TestCase):
+    def test_read(self):
+        self.assertEqual(src.utils.read_operations(os.path.join(ROOT_DIR, 'tests', 'data.json')),
+                         [{'1': 'a'}, {'2': 'b'}, {'3': 'c'}])
 
 
 if __name__ == '__main__':
