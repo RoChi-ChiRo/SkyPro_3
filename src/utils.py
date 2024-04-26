@@ -42,7 +42,7 @@ def get_last_operations(num=5):
     # filter
     operations_filtered = []
     for operation in operations:
-        if operation.get['state'] == 'EXECUTED':
+        if operation.get('state') == 'EXECUTED':
             operations_filtered.append(operation)
     operations = operations_filtered
 
