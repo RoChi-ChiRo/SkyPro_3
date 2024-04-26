@@ -17,6 +17,8 @@ def format_operation(operation):
     output_str += operation.get('description') + '\n'
 
     def format_number(number: str):
+        if number is None:
+            return 'Нет данных'
         split = number.split()
         split_num = split[-1]
         if number.startswith('Счет'):
