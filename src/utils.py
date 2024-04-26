@@ -28,3 +28,5 @@ def get_last_operations(num=5):
         return op.get('date')
 
     operations.sort(key=get_date, reverse=True)
+
+    return operations[:num]
