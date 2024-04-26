@@ -1,4 +1,5 @@
 import json
+import datetime
 import os.path
 from config import ROOT_DIR
 
@@ -9,7 +10,10 @@ def read_operations(path):
 
 
 def format_operation(operation):
-    pass
+    output_str = ''
+    date = datetime.datetime.fromisoformat(operation.get('date'))
+    output_str += date.__format__('%d.%m.%Y ')
+    output_str += operation.get('description\n')
 
 
 def get_last_operations(num=5):
