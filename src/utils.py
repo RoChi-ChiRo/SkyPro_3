@@ -13,8 +13,8 @@ def format_operation(operation):
     output_str = ''
 
     date = datetime.datetime.fromisoformat(operation.get('date'))
-    output_str += date.__format__('%d.%m.%Y ')
-    output_str += operation.get('description\n')
+    output_str += date.__format__('%d.%m.%Y') + ' '
+    output_str += operation.get('description') + '\n'
 
     def format_number(number: str):
         split = number.split()
@@ -26,7 +26,13 @@ def format_operation(operation):
 
     output_str += format_number(operation.get('from'))
     output_str += ' -> '
-    output_str += format_number(operation.get('to'))
+    output_str += format_number(operation.get('to')) + '\n'
+
+    operation_sum = operation.get('operationAmount')
+    output_str += operation_sum.get('amount') + ' '
+    output_str += operation_sum.get('currency').get('name')
+
+    return output_str
 
 
 def get_last_operations(num=5):
