@@ -22,3 +22,9 @@ def get_last_operations(num=5):
         if operation.get['state'] == 'EXECUTED':
             operations_filtered.append(operation)
     operations = operations_filtered
+
+    # sort
+    def get_date(op):
+        return op.get('date')
+
+    operations.sort(key=get_date, reverse=True)
