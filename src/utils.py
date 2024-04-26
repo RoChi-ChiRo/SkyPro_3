@@ -11,9 +11,22 @@ def read_operations(path):
 
 def format_operation(operation):
     output_str = ''
+
     date = datetime.datetime.fromisoformat(operation.get('date'))
     output_str += date.__format__('%d.%m.%Y ')
     output_str += operation.get('description\n')
+
+    def format_number(number: str):
+        split = number.split()
+        split_num = split[-1]
+        if number.startswith('Счет'):
+            return f'Счет **{split[1][-4:]}'
+        else:
+            return f'{split[:-1]} {split_num[:4]} {split_num[4:6]}** **** {split_num[-4:]}'
+
+    output_str += format_number(operation.get('from'))
+    output_str += ' -> '
+    output_str += format_number(operation.get('to'))
 
 
 def get_last_operations(num=5):
