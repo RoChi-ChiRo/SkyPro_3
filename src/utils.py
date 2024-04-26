@@ -1,4 +1,6 @@
 import json
+import os.path
+from config import ROOT_DIR
 
 
 def read_operations(path):
@@ -11,4 +13,5 @@ def format_operation(operation):
 
 
 def get_last_operations(num=5):
-    pass
+    # get operations
+    operations = read_operations(os.path.join(ROOT_DIR, 'data', 'operations.json'))
