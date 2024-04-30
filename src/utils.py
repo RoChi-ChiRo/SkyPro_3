@@ -37,9 +37,13 @@ def format_operation(operation):
     return output_str
 
 
+def get_operations(path):
+    return read_operations(path)
+
+
 def get_last_operations(num=5):
     # get operations
-    operations = read_operations(os.path.join(ROOT_DIR, 'data', 'operations.json'))
+    operations = get_operations(os.path.join(ROOT_DIR, 'data', 'operations.json'))
 
     # filter
     operations_filtered = []
