@@ -3,10 +3,10 @@ import unittest
 import src.utils
 from config import ROOT_DIR
 
-test_data1 = [{"1": "a", "state": "EXECUTED", "date": "2019-08-26T10:50:58.294041"},
-              {"2": "b", "state": "CANCELED", "date": "2018-08-26T10:50:58.294041"},
-              {"3": "c", "state": "EXECUTED", "date": "2017-08-26T10:50:58.294041"}
-              ]
+test_data1 = [{'1': 'a', 'date': '2019-08-26T10:50:58.294041', 'state': 'EXECUTED'},
+              {'2': 'b', 'date': '2018-08-26T10:50:58.294041', 'state': 'CANCELED'},
+              {'3': 'c', 'date': '2017-08-26T10:50:58.294041', 'state': 'EXECUTED'},
+              {'4': 'd', 'date': '2016-08-26T10:50:58.294041', 'state': 'EXECUTED'}]
 test_data2 = [{'data': {
     "id": 441945886,
     "state": "EXECUTED",
